@@ -11,10 +11,8 @@ on:
   push:
     branches: [main]
   # The release feed and softwareVersion come from the product repo, so a product
-  # release must reach windom.app. The product's release workflow can send this
-  # event (needs a token); the nightly run is the backstop if it does not.
-  repository_dispatch:
-    types: [product-release]
+  # release must reach windom.app. Its release workflow starts this one through
+  # workflow_dispatch (below); the nightly run is the backstop if that is not set up.
   schedule:
     - cron: '17 3 * * *'
   # Lets the site be redeployed without a content change, for example after

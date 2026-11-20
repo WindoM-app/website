@@ -24,7 +24,7 @@ npm run dev
 
 ## Deploy
 
-Merging to `main` deploys via GitHub Actions. It also redeploys nightly and on a `product-release` dispatch from the product repo, so a new release reaches the feed.
+Merging to `main` deploys via GitHub Actions. It also redeploys nightly and whenever the product repo cuts a release (it starts the deploy with `workflow_dispatch`), so a new release reaches the feed.
 
 ## Things that must be edited by hand
 
