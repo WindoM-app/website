@@ -3,7 +3,7 @@
  * Retakes the product screenshots the site shows, from the extension as it is
  * built now. Run from site/ after building the extension:
  *
- *   (cd ../web && npm run build)
+ *   (cd ../product/web && npm run build)
  *   xvfb-run -a node scripts/screenshots.mjs        no display (CI, WSL, SSH)
  *   node scripts/screenshots.mjs                    with a display
  *
@@ -39,7 +39,7 @@ import { join, resolve } from 'node:path';
 import { chromium } from 'playwright';
 
 const here = new URL('.', import.meta.url).pathname;
-const EXT = resolve(process.env.EXT ?? join(here, '../../web/dist'));
+const EXT = resolve(process.env.EXT ?? join(here, '../product/web/dist'));
 const OUT = resolve(process.env.OUT ?? join(here, '../public/images'));
 const ONLY = process.env.ONLY?.split(',');
 /** WebP quality. 0.82 keeps the glass edges clean at roughly 50-90 KB a shot. */

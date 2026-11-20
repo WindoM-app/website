@@ -32,7 +32,7 @@ export function LocalSetup() {
         <div className="step-body">
           <p>Clone the repository.</p>
           <pre>
-            <code>git clone https://github.com/YehudaBriskman/WindoM.git{'\n'}cd WindoM</code>
+            <code>git clone https://github.com/WindoM-app/windom.git{'\n'}cd windom</code>
           </pre>
         </div>
       </div>

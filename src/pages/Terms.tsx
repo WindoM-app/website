@@ -206,8 +206,8 @@ export function Terms() {
       <h2>7. Open-source license</h2>
       <p>
         WindoM is open-source software released under the <strong>MIT License</strong>. The source code is available at{' '}
-        <a href="https://github.com/YehudaBriskman/WindoM" target="_blank" rel="noopener">
-          github.com/YehudaBriskman/WindoM
+        <a href="https://github.com/WindoM-app/windom" target="_blank" rel="noopener">
+          github.com/WindoM-app/windom
         </a>
         . The MIT License grants you broad rights to use, copy, modify, and distribute the software, subject to the
         conditions stated in the license.
@@ -284,11 +284,7 @@ export function Terms() {
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> with the subject &ldquo;Copyright&rdquo;, identify the
         work and where it appears, and we will look at it promptly. Open-source dependencies and their licences are
         listed in the{' '}
-        <a
-          href="https://github.com/YehudaBriskman/WindoM/blob/main/THIRD_PARTY_NOTICES.md"
-          target="_blank"
-          rel="noopener"
-        >
+        <a href="https://github.com/WindoM-app/windom/blob/main/THIRD_PARTY_NOTICES.md" target="_blank" rel="noopener">
           third-party notices
         </a>
         .

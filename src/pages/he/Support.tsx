@@ -184,7 +184,7 @@ export function Support() {
       </p>
       <p>
         WindoM הוא קוד פתוח, כך שאפשר גם לקרוא את הקוד עבור כל התנהגות שמתוארת כאן:{' '}
-        <a href={GITHUB_URL}>github.com/YehudaBriskman/WindoM</a>. גם ביקורות ודיווחי תקלות ב
+        <a href={GITHUB_URL}>github.com/WindoM-app/windom</a>. גם ביקורות ודיווחי תקלות ב
         <a href={STORE_URL}>Chrome Web Store</a> נקראים, אם כי GitHub הוא הדרך המהירה יותר - בחנות אין אפשרות להשיב
         בשאלת המשך.
       </p>

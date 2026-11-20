@@ -6,7 +6,11 @@ import { NotFound } from './pages/NotFound';
 import { AUTHOR, FEATURES, GITHUB_URL, PROJECT_PAGE, STORE_URL } from './lib/site';
 // The extension's own version, so the structured data cannot lag a release.
 // It was a hardcoded string that every release had to remember to bump.
-import manifest from '../../web/manifest.json' with { type: 'json' };
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+const manifest = JSON.parse(
+  readFileSync(resolve(process.env.PRODUCT_DIR ?? 'product', 'web/manifest.json'), 'utf8'),
+) as { version: string };
 
 /**
  * Renders every route to static HTML at build time.

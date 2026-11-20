@@ -44,10 +44,11 @@ export function About() {
 
       <h2>Open source and free</h2>
       <p>
-        The whole project is published under the MIT licence at{' '}
-        <a href={GITHUB_URL}>github.com/YehudaBriskman/WindoM</a>: the extension, the backend and this site. It is free
-        to install from the <a href={STORE_URL}>Chrome Web Store</a>, and you can run the entire stack yourself by
-        following <Link to="/local-setup">Local Setup</Link>.
+        The whole project is published under the MIT licence at <a href={GITHUB_URL}>github.com/WindoM-app/windom</a>:
+        the extension and the backend (this site lives in{' '}
+        <a href="https://github.com/WindoM-app/website">WindoM-app/website</a>). It is free to install from the{' '}
+        <a href={STORE_URL}>Chrome Web Store</a>, and you can run the entire stack yourself by following{' '}
+        <Link to="/local-setup">Local Setup</Link>.
       </p>
 
       <h2>Privacy</h2>

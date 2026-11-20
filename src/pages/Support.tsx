@@ -190,7 +190,7 @@ export function Support() {
       </p>
       <p>
         WindoM is open source, so you can also read the code for any behaviour described here:{' '}
-        <a href={GITHUB_URL}>github.com/YehudaBriskman/WindoM</a>. Reviews and bug reports on the{' '}
+        <a href={GITHUB_URL}>github.com/WindoM-app/windom</a>. Reviews and bug reports on the{' '}
         <a href={STORE_URL}>Chrome Web Store</a> listing are read too, though GitHub is the faster route - the store
         gives no way to reply with a follow-up question.
       </p>

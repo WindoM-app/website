@@ -39,8 +39,10 @@ export function About() {
 
       <h2>קוד פתוח וחינמי</h2>
       <p>
-        כל הפרויקט מפורסם ברישיון MIT ב-<a href={GITHUB_URL}>github.com/YehudaBriskman/WindoM</a>: התוסף, השרת והאתר
-        הזה. ההתקנה חינמית מ<a href={STORE_URL}>חנות האינטרנט של Chrome</a>, ואפשר להריץ את כל המערכת בעצמכם לפי{' '}
+        כל הפרויקט מפורסם ברישיון MIT ב-<a href={GITHUB_URL}>github.com/WindoM-app/windom</a>: התוסף והשרת (האתר הזה
+        נמצא ב-
+        <a href="https://github.com/WindoM-app/website">WindoM-app/website</a>). ההתקנה חינמית מ
+        <a href={STORE_URL}>חנות האינטרנט של Chrome</a>, ואפשר להריץ את כל המערכת בעצמכם לפי{' '}
         <Link to="/he/local-setup">הרצה מקומית</Link>.
       </p>
 

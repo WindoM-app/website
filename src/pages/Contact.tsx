@@ -51,7 +51,7 @@ export function Contact() {
 
       <h2>The code</h2>
       <p>
-        WindoM is open source under the MIT licence at <a href={GITHUB_URL}>github.com/YehudaBriskman/WindoM</a>. Pull
+        WindoM is open source under the MIT licence at <a href={GITHUB_URL}>github.com/WindoM-app/windom</a>. Pull
         requests are welcome, and <Link to="/local-setup">Local Setup</Link> covers running the whole stack - extension,
         backend and database - on your own machine.
       </p>

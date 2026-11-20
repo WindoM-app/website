@@ -1,6 +1,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { clip, githubAnchor, parseChangelog, SUMMARY_MAX } from './changelog.ts';
 import { formatDate, postsOf } from './updates.ts';
 
@@ -61,20 +62,22 @@ describe('parseChangelog (#374)', () => {
     assert.equal(githubAnchor('[1.4.0] - 2026-04-25'), '140---2026-04-25');
   });
 
-  it('parses the real CHANGELOG.md into releases that all have a summary', () => {
-    const real = parseChangelog(readFileSync(new URL('../../../CHANGELOG.md', import.meta.url), 'utf8'));
+  it('parses the real CHANGELOG.md into releases that all have a summary', (t) => {
+    const product = resolve(process.env.PRODUCT_DIR ?? 'product');
+    if (!existsSync(resolve(product, 'CHANGELOG.md')))
+      return t.skip('product checkout absent - run scripts/fetch-product.sh');
+    const real = parseChangelog(readFileSync(resolve(product, 'CHANGELOG.md'), 'utf8'));
     assert.ok(real.length >= 8, `only ${real.length} releases parsed`);
-    assert.equal(real[0]?.version, readJson('../../package.json').version);
+    assert.equal(
+      real[0]?.version,
+      (JSON.parse(readFileSync(resolve(product, 'web/manifest.json'), 'utf8')) as { version: string }).version,
+    );
     for (const r of real) {
       assert.ok(r.summary.length > 0, `${r.version} has no summary`);
       assert.ok(r.summary.length <= SUMMARY_MAX + 1, `${r.version} summary is ${r.summary.length} chars`);
     }
   });
 });
-
-function readJson(rel: string): { version: string } {
-  return JSON.parse(readFileSync(new URL(rel, import.meta.url), 'utf8')) as { version: string };
-}
 
 describe('clip', () => {
   it('leaves short text alone', () => {

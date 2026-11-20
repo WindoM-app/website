@@ -1,5 +1,6 @@
 {
   "name": "windom-site",
+  "repository": "github:WindoM-app/website",
   "private": true,
   "version": "1.8.1",
   "type": "module",

@@ -199,8 +199,8 @@ export function Terms() {
       <h2>7. רישיון קוד פתוח</h2>
       <p>
         WindoM הוא תוכנת קוד פתוח המשוחררת תחת <strong>רישיון MIT</strong>. קוד המקור זמין בכתובת{' '}
-        <a href="https://github.com/YehudaBriskman/WindoM" target="_blank" rel="noopener">
-          github.com/YehudaBriskman/WindoM
+        <a href="https://github.com/WindoM-app/windom" target="_blank" rel="noopener">
+          github.com/WindoM-app/windom
         </a>
         . רישיון MIT מעניק לך זכויות רחבות להשתמש, להעתיק, לשנות ולהפיץ את התוכנה, בכפוף לתנאים המפורטים ברישיון.
       </p>
@@ -270,11 +270,7 @@ export function Terms() {
         זכויות היוצרים שלך, יש לכתוב אל <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> עם הנושא
         &quot;Copyright&quot;, לזהות את היצירה ואת המקום שבו היא מופיעה, ונבחן זאת בהקדם. תלויות הקוד הפתוח והרישיונות
         שלהן מפורטות ב
-        <a
-          href="https://github.com/YehudaBriskman/WindoM/blob/main/THIRD_PARTY_NOTICES.md"
-          target="_blank"
-          rel="noopener"
-        >
+        <a href="https://github.com/WindoM-app/windom/blob/main/THIRD_PARTY_NOTICES.md" target="_blank" rel="noopener">
           הודעות הצד השלישי
         </a>
         .

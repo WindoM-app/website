@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -18,7 +19,9 @@ import { FEED_SIZE, parseChangelog } from './src/lib/changelog.ts';
 function releaseFeedPlugin(): Plugin {
   const id = 'virtual:release-feed';
   const resolved = `\0${id}`;
-  const changelog = fileURLToPath(new URL('../CHANGELOG.md', import.meta.url));
+  // The changelog lives in the product repo (windom.app/windom), checked out at
+  // PRODUCT_DIR - see scripts/fetch-product.sh.
+  const changelog = resolve(process.env.PRODUCT_DIR ?? 'product', 'CHANGELOG.md');
   return {
     name: 'windom-release-feed',
     resolveId(source) {

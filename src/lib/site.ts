@@ -16,7 +16,7 @@ export const SITE = {
 
 export const EXTENSION_ID = 'comcnbccalbfcegbmaemancbhgpijkpb';
 export const STORE_URL = `https://chromewebstore.google.com/detail/windom/${EXTENSION_ID}`;
-export const GITHUB_URL = 'https://github.com/YehudaBriskman/WindoM';
+export const GITHUB_URL = 'https://github.com/WindoM-app/windom';
 export const ISSUES_URL = `${GITHUB_URL}/issues`;
 export const CONTACT_EMAIL = 'yehudabriskman@windom.app';
 

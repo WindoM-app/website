@@ -43,9 +43,9 @@ export function Contact() {
 
       <h2>הקוד</h2>
       <p>
-        WindoM הוא קוד פתוח תחת רישיון MIT בכתובת <a href={GITHUB_URL}>github.com/YehudaBriskman/WindoM</a>. Pull
-        requests מתקבלים בברכה, ו<Link to="/he/local-setup">הרצה מקומית</Link> מסבירה איך להריץ את כל המערכת - תוסף, שרת
-        ובסיס נתונים - על המחשב שלך.
+        WindoM הוא קוד פתוח תחת רישיון MIT בכתובת <a href={GITHUB_URL}>github.com/WindoM-app/windom</a>. Pull requests
+        מתקבלים בברכה, ו<Link to="/he/local-setup">הרצה מקומית</Link> מסבירה איך להריץ את כל המערכת - תוסף, שרת ובסיס
+        נתונים - על המחשב שלך.
       </p>
     </DocsLayout>
   );

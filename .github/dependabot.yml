@@ -1,0 +1,31 @@
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      site-security:
+        applies-to: security-updates
+        patterns: ['*']
+      site-compatible:
+        patterns: ['*']
+        update-types: [minor, patch]
+      site-majors:
+        patterns: ['*']
+        exclude-patterns: ['typescript']
+        update-types: [major]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions-compatible:
+        patterns: ['*']
+        update-types: [minor, patch]
+      actions-majors:
+        patterns: ['*']
+        update-types: [major]
