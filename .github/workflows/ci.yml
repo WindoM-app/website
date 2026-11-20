@@ -1,8 +1,6 @@
 name: CI
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
 
@@ -10,7 +8,68 @@ permissions:
   contents: read
 
 concurrency:
-  group: ci-${{ github.event_name == 'pull_request' && github.ref || github.sha }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
+  ci-site:
+    name: Site - lint / typecheck / build
+    # Pushes to main are validated by deploy-site.yml's build, which is the one that
+    # gets uploaded - running the same checks twice buys nothing.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+        with:
+          # Full history: the build dates each sitemap URL by the last commit
+          # to its page, and refuses a shallow clone in CI rather than dating
+          # every page to today.
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Fetch the product repo (CHANGELOG.md, web/manifest.json)
+        run: bash scripts/fetch-product.sh
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Audit dependencies
+        run: node .github/scripts/npm-audit.mjs
+
+      - name: Format check
+        run: npm run format:check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type check
+        run: npm run typecheck
+
+      # Plain `node --test` over src/**/*.test.ts: Node strips the types itself
+      # (unflagged from 22.18, which setup-node's `22` resolves past), so the
+      # site needs no test runner as a dependency.
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify every public URL still exists
+        run: bash scripts/verify-dist.sh
+
+      # Measured all the way down each page, not just at the top: the day stage
+      # and the beat glows only overhang mid-scroll (#412, #413, #414).
+      - name: Install Chromium for the overflow audit
+        run: npx playwright install --with-deps --only-shell chromium
+
+      - name: No horizontal overflow at any scroll position
+        run: npm run audit:overflow
