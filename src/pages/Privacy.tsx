@@ -12,7 +12,7 @@ import { CONTACT_EMAIL } from '../lib/site';
  */
 export function Privacy() {
   return (
-    <DocsLayout path="/privacy" eyebrow="Legal" title="Privacy Policy" subtitle="Last updated: November 18, 2026">
+    <DocsLayout path="/privacy" eyebrow="Legal" title="Privacy Policy" subtitle="Last updated: November 28, 2026">
       <p>
         WindoM is a Chrome extension that replaces your new tab page with a personal productivity dashboard. This policy
         explains exactly what data we collect, what stays entirely on your device, and how we use it. We do not
@@ -241,8 +241,9 @@ export function Privacy() {
               <code>tabs</code>
             </td>
             <td>
-              Open, close, and pin tabs from the tab sidebar. Tab titles and URLs are used only locally to populate the
-              sidebar and are never sent anywhere.
+              List your open tabs in the tab sidebar and in search, switch to the one you choose, open, close and pin
+              tabs from the sidebar and search commands, and close a duplicate WindoM new tab. Tab titles and URLs are
+              used only in your browser and are never sent anywhere.
             </td>
           </tr>
           <tr>
