@@ -146,6 +146,14 @@ export function Privacy() {
       </p>
       <h2>Spotify integration (optional)</h2>
       <p>
+        <strong>Playing a link, without an account.</strong> If you paste a Spotify link into WindoM's settings, the new
+        tab shows Spotify's own embedded player for it. The link is stored only on your device. While the player is
+        shown, your browser connects directly to Spotify, which receives your IP address and browser details, may use
+        cookies, and knows if you are signed in to Spotify. Spotify handles that under its{' '}
+        <a href="https://www.spotify.com/legal/privacy-policy/">privacy policy</a>. WindoM receives nothing from it
+        except whether it is playing, which stays in your browser. Remove the player in settings to stop this.
+      </p>
+      <p>
         WindoM uses a <strong>Bring Your Own App (BYOA)</strong> model for Spotify. You register a free Spotify
         Developer app and provide its Client ID in WindoM's settings, so the access is granted to your own Spotify app,
         not to a shared WindoM client. Our server then calls the Spotify Web API on your behalf with the token you
