@@ -152,16 +152,24 @@ export function Privacy() {
         authorised.
       </p>
       <p>
-        Your Spotify OAuth token is stored encrypted on our servers and is used only to fetch your currently-playing
-        track (artist, title, album art, playback state). We do not access your library, playlists, listening history,
-        or follower data. Disconnecting Spotify immediately deletes the stored token; to also cancel the grant on
-        Spotify's side, remove the app at spotify.com/account/apps.
+        With the permissions you grant, our server reads what is playing (track or episode name, artist or show, album,
+        cover art, link, position and whether it is playing) and the list of your Spotify devices, so it knows where to
+        play. It sends play, pause, next and previous when you press them, which can start playback on one of those
+        devices. If you turn on <strong>Show top tracks</strong>, it also reads your most played tracks of the last few
+        weeks. It does not read or change your playlists or saved library, or your followers.
       </p>
       <p>
-        <strong>Spotify developer terms.</strong> Track data is shown to you, the person who authorised it, and kept
-        only in server memory for about fifteen seconds as a cache. It is not stored in the database, not sold, not used
-        for advertising, and not used to train any machine-learning or AI model. The widget links back to Spotify and
-        does not alter album art or metadata. Your use of the Spotify integration is subject to the{' '}
+        When you connect, we store your Spotify account identifier and the tokens, encrypted, on our servers.
+        Disconnecting Spotify, or deleting your account, deletes them from the database at once; copies in database
+        backups expire as described under "How long we keep data". To also cancel the grant on Spotify's side, remove
+        the app at spotify.com/account/apps.
+      </p>
+      <p>
+        <strong>Spotify developer terms.</strong> What we read is shown to you, the person who authorised it. What is
+        playing is kept only in server memory for a few seconds as a cache; track and device data are not stored in the
+        database, not sold, not used for advertising, and not used to train any machine-learning or AI model. Cover art
+        is shown as Spotify supplies it, with a link back to Spotify. Your use of the Spotify integration is subject to
+        the{' '}
         <a href="https://developer.spotify.com/terms" target="_blank" rel="noreferrer">
           Spotify Developer Terms
         </a>{' '}
@@ -427,7 +435,7 @@ export function Privacy() {
           </tr>
           <tr>
             <td>Calendar, Spotify and GitHub results</td>
-            <td>In server memory only, for between fifteen seconds and three minutes</td>
+            <td>In server memory only, for between a few seconds and about three minutes</td>
           </tr>
           <tr>
             <td>Server request logs and database backups</td>

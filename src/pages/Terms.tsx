@@ -10,7 +10,7 @@ import { CONTACT_EMAIL } from '../lib/site';
  */
 export function Terms() {
   return (
-    <DocsLayout path="/terms" eyebrow="Legal" title="Terms of Use" subtitle="Last updated: November 9, 2026">
+    <DocsLayout path="/terms" eyebrow="Legal" title="Terms of Use" subtitle="Last updated: November 28, 2026">
       <div className="callout">
         <strong>Plain-English summary:</strong> WindoM is a free, open-source new tab extension. Use it for lawful
         personal productivity purposes, don't abuse it or try to break things, and understand that it comes without
@@ -105,7 +105,27 @@ export function Terms() {
             Spotify Developer Policy
           </a>
           , which also bind the Spotify app you register. You must not use WindoM to copy, record or redistribute
-          Spotify content, or to train a machine-learning model on it.
+          Spotify content, or to train a machine-learning model on it. In addition, for anything that comes from
+          Spotify:
+          <ul>
+            <li>
+              Spotify makes no warranty or representation to you, and disclaims all implied warranties, including
+              merchantability, fitness for a particular purpose and non-infringement
+            </li>
+            <li>You must not modify Spotify content or create derivative works from it</li>
+            <li>
+              You must not decompile, reverse-engineer or disassemble the Spotify platform, service or content, except
+              where the law gives you that right regardless
+            </li>
+            <li>
+              WindoM's developer is responsible for WindoM; to the extent the law allows, Spotify and other third
+              parties have no liability for it
+            </li>
+            <li>
+              Spotify is a third-party beneficiary of these Terms as they concern its content, and may enforce them
+              directly
+            </li>
+          </ul>
         </li>
         <li>
           <strong>GitHub:</strong> The GitHub widget uses a classic personal access token that you create yourself, with
